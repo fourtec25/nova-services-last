@@ -90,7 +90,6 @@ class OriginPartner(models.Model):
 class BudgetPartenariat(models.Model):
     _name = 'budget.partenariat'
     _description ='Partenariat'
-
     company_id = fields.Many2one('res.company', default=lambda self: self.env.company)
     currency_id = fields.Many2one('res.currency', related='company_id.currency_id', string="Company Currency", readonly=True,
         help='Utility field to express amount currency')
@@ -100,4 +99,5 @@ class BudgetPartenariat(models.Model):
     montant_a_regler = fields.Monetary('Montant a regler')
     partner_id = fields.Many2one('res.partner', string='partner')
     date_reglement = fields.Date(string='Date de réglement')
+
 
